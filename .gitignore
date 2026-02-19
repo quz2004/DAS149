@@ -1,0 +1,9 @@
+*_files/
+*.html
+*.pdf
+libs/
+quarto-html/
+clipboard/
+__pycache__/
+.quarto/
+private/
