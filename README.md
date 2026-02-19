@@ -6,7 +6,7 @@
 
 ## Course Description
 
-A seminar-style course (5–6 sessions) that equips students with practical knowledge and tools for launching a data science career. Topics span industry trends, job roles, portfolio building, and strategic career planning. The course culminates in a student portfolio presentation.
+A seminar-style 1-credit course (5–6 sessions) that equips students with practical knowledge and tools for launching a data science career. Topics span industry trends, job roles, portfolio building, and strategic career planning. The course culminates in a student portfolio presentation.
 
 ## Learning Objectives
 
@@ -40,5 +40,4 @@ This is a **Pass / No Pass** course. Students must:
 ## Contact
 
 - **Instructor:** Dr. Zheng Qu
-- **Office:** D406
-- **Email:** myu820@mt.feitian.edu
+- **Office:** D405
