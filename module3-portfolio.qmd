@@ -1,0 +1,736 @@
+---
+title: "Career Development in Data Science - Module 3: The Portfolio-First Mindset"  
+subtitle: "GitHub, Storytelling, and Your First Data Science Logo"  
+author: "Dr. Zheng Qu"  
+format:  
+  revealjs:  
+    slide-number: true  
+    preview-links: auto  
+    code-line-numbers: false  
+    chalkboard:  
+      theme: whiteboard  
+      boardmarker-width: 5  
+      chalk-width: 7  
+    smaller: false  
+    incremental: true  
+    theme: dark  
+    scrollable: true  
+    navigation-mode: vertical  
+    transition: slide  
+    background-transition: fade  
+    pointer:  
+      pointerSize: 24  
+      color: '#38bdf8'  
+      alwaysVisible: false  
+revealjs-plugins:  
+  - pointer
+---
+
+# Module 3 Overview
+
+::: {.fragment}
+
+- You already did the **hard work**: built an app, digitized Nightingale's diagram, and made the plot.
+
+- Today is about turning that work into a **public story** and a **personal brand asset**.
+
+- By the end of class, you will have:
+  - A GitHub repo with your Nightingale project
+  - A clear, readable README
+  - A simple personal **logo** generated with AI
+  - Your project **pinned** on your GitHub profile
+
+:::
+
+
+# Goals for Today
+
+::: {.fragment}
+
+- Get comfortable using **Git + GitHub with SSH** (no fear of the terminal).
+
+- Publish your **first real portfolio project**.
+
+- Practice **data storytelling** in your README.
+
+- Design and generate a **personal logo** with Gemini 3 Pro in Antigravity.
+
+:::
+
+
+# Assumptions
+
+::: {.fragment}
+
+- You already have:
+  - Nightingale digitization app code
+  - Computed data (CSV / JSON)
+  - Final rose diagram PNG
+
+- Python and Antigravity are installed and working on your machine.
+
+- We will check and install Git together at the start of class.
+
+:::
+
+
+# Act 1 — Big Picture
+
+## Why Portfolios Matter
+
+::: {.fragment}
+
+- Recruiters and mentors want to see **evidence**, not just course names.
+
+- A clean GitHub repo with a strong README is your **visible track record**.
+
+- Today you create your **first "anchor" project**: something you can show proudly.
+
+:::
+
+
+## Nightingale as a Portfolio Piece
+
+::: {.fragment}
+
+- You solved a real historical data problem and built a full pipeline.
+
+- The project shows:
+  - Coding
+  - Visualization
+  - Use of data to tell a **story about change**
+
+- Now we make that legible to others.
+
+:::
+
+
+# Act 2 — GitHub Setup with SSH
+
+## Step 0 — Check If Git Is Installed
+
+::: {.fragment}
+
+- Before we set up SSH, we must be sure Git is installed.
+
+- We will:
+  - Ask Antigravity how to check for Git.
+  - Run the check command.
+  - If needed, ask Antigravity to guide us through installation (Mac or Windows).
+
+:::
+
+
+## Prompt 0 — Check Git (Any OS)
+
+```text
+I am a beginner on [macOS or Windows].
+
+Help me check whether Git is already installed.
+
+Give me:
+1) A one-sentence explanation of what we are checking.
+2) The exact command I should type to check the Git version.
+```
+
+::: {.fragment}
+
+- Type the suggested command in your terminal and press Enter.
+
+- If you see a version like `git version 2.x.x`, you already have Git — skip to Prompt 1.
+
+- If you get an error, raise your hand.
+
+:::
+
+
+## If Git Is Not Installed — macOS
+
+::: {.fragment}
+
+- On macOS, the simplest beginner-friendly option is:
+
+  - Install **Xcode Command Line Tools**, which include Git.
+
+- We will let Antigravity give us the exact command and explain it.
+
+:::
+
+
+## Prompt 0-mac — Install Git on macOS
+
+```text
+I am on macOS and the command to check `git --version` did not work.
+
+I want the simplest, safest way to install Git using Apple's Command Line Tools.
+
+Give me:
+1) A short explanation of what we are about to do.
+2) The exact command I should type to start the installation.
+3) Any follow-up steps I should expect (such as clicking "Install" in a popup).
+```
+
+::: {.fragment}
+
+- Type the command Antigravity gives you (likely `xcode-select --install`).
+
+- A popup will appear — click **Install** and wait.
+
+- When done, run the Git version check again to confirm.
+
+:::
+
+
+## If Git Is Not Installed — Windows
+
+::: {.fragment}
+
+- On Windows, you have two beginner options:
+
+  - **GUI installer** from git-scm.com (recommended for most students)
+  - **winget** command in PowerShell (faster if available)
+
+:::
+
+
+## Prompt 0-win — Install Git on Windows
+
+```text
+I am on Windows and the command to check `git --version` did not work.
+
+Give me two beginner-friendly options to install Git:
+
+1) Using the official Git for Windows installer (GUI):
+   - Tell me what website to open.
+   - Tell me what to click.
+   - Tell me what choices to make in the installer.
+
+2) Using the winget command in PowerShell:
+   - Tell me the exact `winget install` command.
+   - Explain briefly what it does.
+```
+
+::: {.fragment}
+
+- Follow the option that matches your setup.
+
+- When done, open a **new** PowerShell window and run the Git version check again.
+
+:::
+
+
+## Step 1 — Create Your GitHub Account
+
+::: {.fragment}
+
+- Go to <https://github.com>.
+
+- Choose a **professional username**:
+  - Use your real name or a clean variant if possible.
+  - Avoid jokes or references you will regret later.
+
+- Add:
+  - Your full name
+  - A simple profile picture
+  - Your location / school
+
+:::
+
+
+## SSH Setup — Workflow
+
+::: {.fragment}
+
+- We will:
+  - Generate an SSH key on your machine.
+  - Add the public key to GitHub.
+  - Test the connection.
+
+- Terminal on the left, Antigravity on the right.
+
+- You **type every command**, but Antigravity explains it.
+
+:::
+
+
+## Prompt 1 — Generate SSH Key
+
+```text
+I am a beginner setting up GitHub. 
+
+What is GitHub in one simple sentence, and what is the first command I should run to generate a new SSH key? 
+
+Give me:
+1) One short explanation sentence
+2) The exact command on its own line
+```
+
+::: {.fragment}
+
+- Read the explanation.
+
+- Type the command in your terminal and press Enter.
+
+- When done, raise your hand if you see a message about the key being created.
+
+:::
+
+
+## Prompt 2 — Start SSH Agent
+
+```text
+I just generated my SSH key. 
+
+What is the next command I should run to start the SSH agent, and what does it do? 
+
+Again:
+1) One short explanation
+2) The exact command on its own line
+```
+
+::: {.fragment}
+
+- Copy the command from Antigravity.
+
+- Type it in your terminal (do **not** paste from Antigravity).
+
+- Press Enter and check for success.
+
+:::
+
+
+## Prompt 3 — Add Key to Agent
+
+```text
+Now I need to add my new SSH key to the SSH agent. 
+
+Explain what the command does, then give the command.
+```
+
+::: {.fragment}
+
+- Type the command to add your key.
+
+- If you see an error, raise your hand — we will debug together.
+
+:::
+
+
+## Prompt 4 — Copy Public Key
+
+```text
+How do I see my public SSH key so I can copy it into GitHub?
+
+Explain briefly, then give the command.
+```
+
+::: {.fragment}
+
+- Run the `cat` command Antigravity gives you.
+
+- Carefully select and copy the full key from your terminal.
+
+- In GitHub:
+  - Settings → SSH and GPG keys → New SSH key
+  - Paste and save.
+
+:::
+
+
+## Prompt 5 — Test Connection
+
+```text
+How do I test that my SSH connection to GitHub is working?
+
+Explain in one sentence, then give the command.
+```
+
+::: {.fragment}
+
+- Run the test command.
+
+- You should see a message like: **"Hi _your-username_! You've successfully authenticated."**
+
+- When you see your username in the message, pause and smile.
+
+:::
+
+
+## Checkpoint 1
+
+::: {.fragment}
+
+- You now have:
+  - A GitHub account.
+  - A working SSH connection.
+
+- This is a **big professional milestone**.
+
+- Take 5 seconds to appreciate it.
+
+:::
+
+
+# Act 3 — Create the Nightingale Repo
+
+## Local Folder and Repo
+
+```text
+I want to create a new project folder called 'nightingale-rose' on my computer, initialize it as a git repository, and connect it to a new GitHub repo called 'nightingale-rose' that I already created in the browser. 
+
+Give me one command at a time, in order. For each command:
+1) Briefly explain what it does
+2) Then show the command
+I will say 'next' when I'm ready.
+```
+
+::: {.fragment}
+
+- We will advance through these commands together.
+
+- Everyone pauses between commands so no one is left behind.
+
+:::
+
+
+## Expected Structure
+
+::: {.fragment}
+
+- Inside `nightingale-rose/`, you should eventually have:
+
+  - `README.md`  
+  - `data/` (JSON / CSV from previous class)  
+  - `src/` (your Python scripts)  
+  - `output/` (your final PNG)  
+  - `assets/` (original Nightingale image, logo)
+
+- For now, create `README.md` (empty is fine).
+
+:::
+
+
+# Act 4 — Writing the Data Story
+
+## README Sections
+
+::: {.fragment}
+
+- Your README will have:
+
+  - Title and one-sentence summary  
+  - The historical story  
+  - How the data was collected  
+  - The math and visualization  
+  - Key insights  
+  - Technical details  
+  - How to run  
+  - References
+
+- We'll build this **section by section**.
+
+:::
+
+
+## Section 1 — Title and Summary
+
+::: {.fragment}
+
+- Open `README.md` in your editor.
+
+- Add:
+
+  - A clear title, e.g.:  
+    `# Florence Nightingale's Rose Diagram — A Replication`
+
+  - A one-sentence summary in your own words.
+
+:::
+
+
+## Prompt 6 — Historical Context
+
+```text
+Write a 3-sentence opening paragraph for a data science portfolio README about Florence Nightingale's rose diagram. 
+
+Mention:
+- The Crimean War
+- The sanitary reform crisis
+- How her visualization influenced British military policy
+
+Write it in a clear, professional tone for a technical audience.
+```
+
+::: {.fragment}
+
+- Paste the paragraph into a **"The Story"** section in your README.
+
+- Edit at least one sentence to sound more like **your** voice.
+
+:::
+
+
+## Prompt 7 — How the Data Was Collected
+
+```text
+Write a 3-sentence paragraph for my README explaining how I collected the data for this project:
+
+- I built a Python app that let me click 4 key points on each month in Nightingale's original diagram image.
+- The app saved pixel coordinates as JSON.
+- I then used Python to convert those coordinates into radii and proportional areas for different causes of death.
+
+Write this in first person and make it understandable for someone new to data visualization.
+```
+
+::: {.fragment}
+
+- Paste into a **"How the Data Was Collected"** section.
+
+- Adjust details if your implementation differed.
+
+:::
+
+
+## Prompt 8 — Key Insights
+
+```text
+Write 3 bullet points for my README that explain what Florence Nightingale's rose diagram reveals:
+
+1) One bullet about what the left diagram (before reforms) shows.
+2) One bullet about what the right diagram (after reforms) shows.
+3) One bullet about what this visualization demonstrates about data-driven policy change.
+
+Keep each bullet to one sentence.
+```
+
+::: {.fragment}
+
+- Paste into a **"Key Insights"** section.
+
+- Add **one extra bullet of your own** based on your plot.
+
+:::
+
+
+## Reflection (No AI)
+
+::: {.fragment}
+
+- Add a **"What I Learned"** section.
+
+- Write 2–3 sentences **without using AI**:
+
+  - What did you learn technically?
+  - What did you learn about data and society?
+
+- This is your authentic voice.
+
+:::
+
+
+# Act 5 — Designing Your Logo
+
+## Why a Logo?
+
+::: {.fragment}
+
+- A logo acts as a **visual anchor** for your identity.
+
+- It doesn't need to be fancy:
+
+  - Simple shapes
+  - Initials
+  - A small data-related icon
+
+- The goal is to feel: **"This is mine."**
+
+:::
+
+
+## Option Templates
+
+::: {.fragment}
+
+- Choose **one** of these simple logo concepts:
+
+  - **Monogram**: Your initials inside a circle or square, with a subtle data element.
+  - **Data Icon**: A tiny bar chart, line chart, or node-link diagram with your initials.
+  - **Nightingale Theme**: An abstract "rose" of radial bars plus your initials.
+
+- Sketch a quick idea on paper (1–2 minutes).
+
+:::
+
+
+## Turning Design into a Prompt
+
+::: {.fragment}
+
+- Open Antigravity and start a new chat.
+
+- Use this pattern and customize the [brackets]:
+
+:::
+
+```text
+You are Gemini 3 Pro, acting as a logo designer.
+
+Create a simple, flat, vector-style logo for a data science student.
+
+Concept:
+- [Describe your chosen option: monogram / data icon / Nightingale theme]
+- Include my initials: [YOUR INITIALS]
+- Style: minimal, high contrast, works well at small sizes
+- Background: transparent
+- Output format: SVG or high-resolution PNG
+
+First, describe the logo you will generate in 2–3 sentences. Then generate it.
+```
+
+
+## Using the Logo
+
+::: {.fragment}
+
+- Save the logo file into your repo, e.g.:
+
+  - `assets/logo.png` or `assets/logo.svg`
+
+- In your README, add at the very top:
+
+  - `![Logo](assets/logo.png)` (adjust path as needed)
+
+- Optionally, set it as your repo's social preview image in GitHub settings.
+
+:::
+
+
+# Act 6 — Commit, Push, and Pin
+
+## Prompt 9 — Stage and Commit
+
+```text
+I am ready to publish my project. 
+
+Give me the git commands, one at a time, to:
+1) See which files are changed.
+2) Stage all files.
+3) Write a good commit message for adding my Nightingale project and README.
+4) Push to the main branch on GitHub.
+
+Explain each command briefly.
+```
+
+::: {.fragment}
+
+- Type each command.
+
+- When asked for a commit message, use either the suggested one or your own.
+
+:::
+
+
+## Checkpoint 2 — Live on GitHub
+
+::: {.fragment}
+
+- Refresh your GitHub repo page.
+
+- Confirm:
+
+  - README is visible.
+  - Image of the rose diagram displays.
+  - Logo shows at the top.
+
+- Share your repo URL with a neighbor.
+
+:::
+
+
+## Prompt 10 — Profile README
+
+```text
+Write a GitHub profile README for a college freshman studying data science.
+
+Include:
+- A short About Me (2–3 sentences)
+- A Skills section (Python, matplotlib, data visualization, git)
+- A Projects section linking to my 'nightingale-rose' repository
+- A Currently Learning section
+
+Use clean markdown and a professional but friendly tone.
+```
+
+::: {.fragment}
+
+- Create a new repo named exactly your username.
+
+- Add `README.md` with the generated content (and edit it).
+
+- Add a bullet with a link to your Nightingale project.
+
+:::
+
+
+## Pin Your Project
+
+::: {.fragment}
+
+- On your GitHub profile:
+
+  - Click **Customize your pins**.
+  - Pin your `nightingale-rose` repo.
+
+- This is now one of your **headline projects**.
+
+:::
+
+
+## GitHub Pages — Give Your Project a URL
+
+::: {.fragment}
+
+- Enable GitHub Pages so your project has a live web address:
+
+  1. In your `nightingale-rose` repo → **Settings → Pages**
+  2. Under **Source**, select `main` branch → click **Save**
+  3. Your project will be live at:  
+     `https://`**`your-username`**`.github.io/nightingale-rose/`
+
+- Add this URL to:
+  - Your repo's **About** description (top-right gear icon)
+  - Your `README.md` (as a clickable link)
+
+- Now anyone can visit your project — no GitHub account needed.
+
+:::
+
+
+# Wrap-Up
+
+## What You Achieved Today
+
+::: {.fragment}
+
+- Set up a **professional GitHub account** with SSH.
+
+- Turned a technical project into a **clear narrative**.
+
+- Designed and generated a **personal logo**.
+
+- Published, pinned, and **published live** your first data science portfolio project.
+
+:::
+
+
+## Homework (Light)
+
+::: {.fragment}
+
+- Add one more section to your profile README:
+
+  - "What I'm Curious About in Data Science"
+
+- Browse 2 classmates' GitHub profiles and leave them **encouraging feedback**.
+
+:::

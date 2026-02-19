@@ -427,6 +427,24 @@ On your GitHub profile:
 - Pin the `nightingale-rose` repository.  
 
 
+### Enable GitHub Pages
+
+Give your project a live public URL:
+
+1. In your `nightingale-rose` repo → **Settings → Pages**
+2. Under **Source**, select `main` branch → click **Save**
+3. Wait ~1 minute, then visit:  
+   `https://your-username.github.io/nightingale-rose/`
+
+Add this URL to:
+
+- Your repo's **About** section (top-right gear icon on the repo page)
+- Your `README.md` as a clickable link, e.g.:  
+  `[Live Project](https://your-username.github.io/nightingale-rose/)`
+
+Anyone can now visit your project without a GitHub account.
+
+
 ## Light Homework
 
 - Add a new section to your profile README:
